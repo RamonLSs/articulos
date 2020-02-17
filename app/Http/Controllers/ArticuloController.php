@@ -60,7 +60,7 @@ class ArticuloController extends Controller
 
             $nombre = 'articulos/'.time().'_'.$file->getClientOriginalName();
 
-            Storage::disk('public')->put($nombre, \File::get($file));
+            \Storage::disk('public')->put($nombre, \File::get($file));
 
             $articulos=Articulo::create($request->all());
 
@@ -112,7 +112,7 @@ class ArticuloController extends Controller
 
             $nombre = 'articulos/'.time().'_'.$file->getClientOriginalName();
 
-            Storage::disk('public')->put($nombre, \File::get($file));
+            \Storage::disk('public')->put($nombre, \File::get($file));
 
             if(basename($articulo->imagen)!= 'default.jpg'){
                 unlink($articulo->imagen);
