@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::resource('articulos', 'Articulocontroller');
+Route::resource('articulos', 'ArticuloController');
